@@ -19,7 +19,7 @@ const computerScissors = document.getElementById('computer-scissors')
 const computerLizard = document.getElementById('computer-lizard')
 const computerSpock = document.getElementById('computer-spock')
 
-const allGameIcons = document.querySelector('.far')
+const allGameIcons = document.querySelectorAll('.far')
 
 let playerScoreNumber = 0
 let computerScoreNumber = 0
@@ -43,6 +43,7 @@ function resetAll() {
     resultText.textContent = ''
     resetSelected()
 }
+window.resetAll = resetAll
 
 function computerRandomChoice() {
     const computerChoiceNumber = Math.random()
@@ -138,6 +139,6 @@ function select(playerChoice) {
             break
     }
 }
-window.select = select
+window.onselect = select
 
 resetAll()
